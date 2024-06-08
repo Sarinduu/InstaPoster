@@ -27,10 +27,10 @@ InstaPoster is a Node.js application that allows you to post images to Instagram
 
    **Please add only JPEG images under 250KB**
 
-6. Add that image path to the **postImageIntheFolder** function
+6. Add that image path and a caption to the **postImageIntheFolder** function
 
     ```sh 
-    postImageIntheFolder("image path") 
+    postImageIntheFolder("image path", "image caption") 
     ```
 
 7. Run the application

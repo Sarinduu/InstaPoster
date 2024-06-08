@@ -88,7 +88,7 @@ async function viewUserProfileById(userId) {
 }
 
 // Function to post an image using URL
-async function postImageUsingURL(imageUrl) {
+async function postImageUsingURL(imageUrl, caption) {
   // Login to Instagram
   await login();
 
@@ -105,7 +105,7 @@ async function postImageUsingURL(imageUrl) {
   try {
     const publishResult = await ig.publish.photo({
       file: imageBuffer,
-      caption: "A mystical castle", // Replace with your caption
+      caption: caption, // Replace with your caption
     });
     console.log("Image posted successfully:", publishResult);
   } catch (err) {
@@ -114,7 +114,7 @@ async function postImageUsingURL(imageUrl) {
 }
 
 // Function to post an image in the iamge folder
-async function postImageIntheFolder(imagePath) {
+async function postImageIntheFolder(imagePath, caption) {
   // Login to Instagram
   await login();
 
@@ -131,7 +131,7 @@ async function postImageIntheFolder(imagePath) {
   try {
     const publishResult = await ig.publish.photo({
       file: imageBuffer,
-      caption: "A mystical castle", // Replace with your caption
+      caption: caption, // Replace with your caption
     });
     console.log("Image posted successfully:", publishResult);
   } catch (err) {
@@ -142,10 +142,10 @@ async function postImageIntheFolder(imagePath) {
 ////////////////////////////////////////////----------------////////////////////////////////////////////
 
 // -- Example usage: post Image using URL -- function 01
-// postImageUsingURL(imageUrl);
+// postImageUsingURL(imageUrl, "A mystical castle");
 
 // -- Example usage: post Image in the image folder -- function 02
-postImageIntheFolder(imagePath2);
+postImageIntheFolder(imagePath2, "A mystical castle");
 
 ////////////////////////////////////////////----------------////////////////////////////////////////////
 
